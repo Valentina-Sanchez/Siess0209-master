@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Inicio"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        ></LinearLayout>
+
+   <!-- <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Login"
+        android:textColor="@android:color/black"
+        android:textSize="40dp"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:layout_marginTop="30dp"
+        android:id="@+id/im"
+        android:fontFamily="cursive"/> -->
+
+
+    <ImageView
+        android:id="@+id/ima"
+        android:layout_width="134dp"
+        android:layout_height="127dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="60dp"
+        android:src="@drawable/user" />
+
+
+
+    <EditText
+        android:id="@+id/nom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ima"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:textColorHint="@android:color/black"
+        android:textColor="@android:color/black"
+        android:hint="Usuario"/>
+
+    <EditText
+        android:id="@+id/pas"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/nom"
+        android:hint="Contraseña"
+android:textColorHint="@android:color/black"
+        android:textColor="@android:color/black"
+        android:layout_marginTop="20dp"
+        android:inputType="textPassword"
+        />
+
+    <Button
+
+        android:id="@+id/btnAcep"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/pas"
+        android:text="Aceptar"
+        android:background="@drawable/redondo"
+        android:textSize="21dp"
+        android:layout_marginTop="50dp"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:text="©SENA"
+        android:layout_centerHorizontal="true"
+        android:textColor="@color/primary_text"
+        android:textSize="15dp"
+        />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="registrar"
+        android:layout_below="@+id/btnAcep"
+        android:layout_marginTop="15dp"
+        android:id="@+id/btnReg"
+        android:background="@drawable/redondo"
+        android:onClick="onRegister"></Button>
+</RelativeLayout>

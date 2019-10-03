@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">SIESS</string>
+    <string name="tab_text_1">EQUIPOS</string>
+    <string name="tab_text_2">NOTIFICACIONES</string>
+    <string name="solicitud_de_prestamo">Solicitud de prestamo</string>
+    <string name="fecha_salida">fecha salida</string>
+    <string name="fecha_devolucion">fecha devolucion</string>
+    <string name="aceptar">Aceptar</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

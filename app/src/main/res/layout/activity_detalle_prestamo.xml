@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="fill_parent"
+    android:layout_width="fill_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DetallePrestamo"
+    android:padding="15dp"
+    >
+
+    <ImageView
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        
+        android:src="@drawable/fondo"
+        android:id="@+id/im"
+        android:onClick="onTomarFoto"
+        >
+         </ImageView>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" 
+        android:text="Codigo: "
+        android:id="@+id/et1"
+        android:textColor="@color/primary_text"
+        android:textSize="30dp"
+        android:layout_below="@+id/im"></TextView>
+    
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/et1"
+        android:text="Codigo"
+        android:textSize="30dp"
+        android:id="@+id/cod"
+        android:textColor="@color/primary_text"
+        >
+    </TextView>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Fecha solicitud: "
+        android:id="@+id/et2"
+        android:textSize="25dp"
+        android:textColor="@color/primary_text"
+        android:layout_below="@+id/cod"
+        ></TextView>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/et2"
+        
+        android:text="F"
+        android:textSize="25dp"
+        android:id="@+id/feSol"
+        android:textColor="@color/primary_text"
+        >
+    </TextView>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Fecha Salida: "
+        android:textSize="25dp"
+        android:textColor="@color/primary_text"
+        android:layout_below="@+id/feSol"
+        
+        android:id="@+id/et3"></TextView>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/et3"
+        
+        android:text="FeSal"
+        android:textSize="25dp"
+        android:id="@+id/feSal"
+        android:textColor="@color/primary_text"
+        >
+    </TextView>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Fecha Devolución: "
+        android:textSize="25dp"
+        android:id="@+id/et4"
+        
+        android:textColor="@color/primary_text"
+        android:layout_below="@+id/feSal"></TextView>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/et4"
+        
+        android:text="Fede"
+        android:textSize="25dp"
+        android:id="@+id/feDe"
+        android:textColor="@color/primary_text"
+        >
+    </TextView>
+
+    <TextView
+        android:id="@+id/et5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/feDe"
+        
+        android:text="Estado: "
+        android:textColor="@color/primary_text"
+        android:textSize="25dp"></TextView>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/et5"
+        
+        android:text="Es"
+        android:textSize="25dp"
+        android:id="@+id/ESTADO"
+        android:textColor="@color/primary_text"
+        >
+    </TextView>
+
+    <TextView
+        android:id="@+id/et6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ESTADO"
+        
+        android:text="ficha: "
+        android:textColor="@color/primary_text"
+        android:textSize="25dp"></TextView>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/et6"
+        android:text="ficha"
+        android:textSize="25dp"
+        
+        android:id="@+id/ficha"
+        android:textColor="@color/primary_text"
+        >
+    </TextView>
+
+    <TextView
+        android:id="@+id/et7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ficha"
+        
+        android:text="Municipio: "
+        android:textColor="@color/primary_text"
+        android:textSize="25dp"></TextView>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/et7"
+        
+        android:text="Mu"
+        android:textSize="25dp"
+        android:id="@+id/muni"
+        android:textColor="@color/primary_text"
+        >
+    </TextView>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Responsable: "
+        android:id="@+id/et8"
+        
+        
+        android:textSize="25dp"
+        android:textColor="@color/primary_text"
+        android:layout_below="@+id/muni"></TextView>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/et8"
+        
+        android:text="Resp"
+
+        
+        android:textSize="25dp"
+        android:id="@+id/resp"
+        android:textColor="@color/primary_text"
+        >
+    </TextView>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Observación: "
+        android:id="@+id/et9"
+        android:textSize="25dp"
+        
+        
+        android:textColor="@color/primary_text"
+        android:layout_below="@+id/resp"></TextView>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/et9"
+        
+        android:text="Obser"
+        
+        android:textSize="25dp"
+         android:id="@+id/ob"
+        android:textColor="@color/primary_text"
+        android:layout_marginBottom="10dp"
+        >
+    </TextView>
+
+</RelativeLayout>
+</ScrollView>
