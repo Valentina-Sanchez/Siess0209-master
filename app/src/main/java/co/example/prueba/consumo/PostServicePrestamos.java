@@ -4,18 +4,21 @@ import java.util.List;
 
 import co.example.prueba.modelo.Ficha;
 import retrofit2.Call;
+import retrofit2.http.Body;
+import retrofit2.http.Field;
+import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
+import retrofit2.http.POST;
 
 public interface PostServicePrestamos {
 
         String API_ROUTE = "webresources/siess1.jpa.entidades.prestamo";
-        String API_ROUTE_FICHA = "webresources/siess1.jpa.entidades.ficha";
 
         @GET(API_ROUTE)
-        Call<List<Prestamo>> getPost();
+        Call<List<PojoPrestamo>> getPost();
 
-      /*  @GET(API_ROUTE_FICHA)
-        Call<List<Ficha>> getPostFicha();*/
+    @POST("webresources/siess1.jpa.entidades.prestamo")
+    Call<PojoPrestamo> crearPrestamo(PojoPrestamo prestamo);
 
-    }
+}
 

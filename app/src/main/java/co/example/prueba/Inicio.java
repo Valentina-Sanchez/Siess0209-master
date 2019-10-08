@@ -9,6 +9,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -19,13 +20,29 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import co.example.prueba.consumo.Equipo;
+import co.example.prueba.consumo.PostService;
+import co.example.prueba.consumo.Usuario;
+import co.example.prueba.utils.Utils;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
+
 public class Inicio extends AppCompatActivity {
 
-    Button boton, botonRe;
-    EditText usuario, con;
 
-    String nombreAd = "Admin" , nomUs = "User";
-    String conn = "admin", conn2= "user";
+    ArrayList<String> titles = new ArrayList<>();
+    ArrayAdapter arrayAdapter ;
+
+    Button boton, botonRe;
+    EditText nombreU, pass;
+    String  nombre, cont;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,43 +54,61 @@ public class Inicio extends AppCompatActivity {
 
         getSupportActionBar().hide();
 
+
     }
 
     public void inicializarViews() {
-        usuario = (EditText) findViewById(R.id.nom);
-        con = (EditText) findViewById(R.id.pas);
-        boton = (Button) findViewById(R.id.btnAcep);
+        nombreU =  findViewById(R.id.edtNombreUsuario);
+        pass =findViewById(R.id.edtPass);
+        boton = findViewById(R.id.btnAcep);
 
+            nombre = nombreU.getText().toString();
+           cont = pass.getText().toString();
 
         boton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-                if (usuario.getText().toString().equals(nombreAd) && con.getText().toString().equals(conn)) {
-                    Toast.makeText(Inicio.this, "Bienvenido" + nombreAd, Toast.LENGTH_SHORT).show();
-                    Intent intent = new Intent(Inicio.this, Contenedor.class);
-                    startActivity(intent);
-                } else if (usuario.getText().toString().equals(nomUs) && con.getText().toString().equals(conn2)) {
-                    Toast.makeText(Inicio.this, "Bienvenido" + nomUs, Toast.LENGTH_SHORT).show();
-                    Intent in = new Intent(Inicio.this, Prestamos.class);
-                    startActivity(in);
-                } else {
-                    Toast.makeText(Inicio.this, "Verifique sus datos", Toast.LENGTH_SHORT).show();
+                getUsuarios(nombreU.getText().toString(), pass.getText().toString());
 
-                }
+
             }
         });
 
-        botonRe=findViewById(R.id.btnReg);
+    }
+    private void getUsuarios (String nombre, String pass) {
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl("http://10.75.199.51:8083/siessPro-1.0.0/")
+                .addConverterFactory(GsonConverterFactory.create()).build();
 
-      /*  botonRe.setOnClickListener(new View.OnClickListener() {
+
+        PostService postService = retrofit.create(PostService.class);
+
+        Call<Usuario> call = postService.getUsuarios(nombre, pass);
+
+        call.enqueue(new Callback<Usuario>() {
             @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(Inicio.this, Registro.class);
-                startActivity(intent);
+            public void onResponse(Call<Usuario> call, Response<Usuario> response) {
+                Usuario user = response.body();
+                    if (user.getNombreusuario()!= null){
+                       Toast.makeText(Inicio.this, "Bienvenido"+user.getNombreusuario(), Toast.LENGTH_SHORT).show();
+                        Utils.user = user;
+                       Intent intent = new Intent( Inicio.this, Prestamo.class);
+                       startActivity(intent);
+                    }else if (user.getNombreusuario() != "admin"){
+                        Intent intent = new Intent( Inicio.this, Prestamos.class);
+                        startActivity(intent);
+                }else {
+                        Toast.makeText(Inicio.this, "Verifique sus datos", Toast.LENGTH_SHORT).show();
+                    }
+
+            }
+
+            @Override
+            public void onFailure(Call<Usuario> call, Throwable t) {
+                Toast.makeText(Inicio.this, "Datos Invalidos", Toast.LENGTH_SHORT).show();
             }
         });
-*/
     }
 
 }

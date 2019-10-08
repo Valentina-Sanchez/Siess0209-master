@@ -1,23 +1,20 @@
 package co.example.prueba.consumo;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
-
 import co.example.prueba.modelo.Ficha;
 import co.example.prueba.modelo.Municipio;
 import co.example.prueba.modelo.Responsable;
 
-public class Prestamo {
+public class PojoPrestamo {
 
     private String codigo;
-   private String fechasolicitud;
+    private String fechasolicitud;
     private String fechasalida;
     private String fechadevolucion;
     private short estado;
     private String observacion;
-    private Ficha fkFicha;
-    private Municipio fkMunicipio;
-    private Responsable fkResponsable;
+    private String fkFicha;
+    private String fkMunicipio;
+    private String fkResponsable;
 
     public String getCodigo() {
         return codigo;
@@ -27,7 +24,7 @@ public class Prestamo {
         this.codigo = codigo;
     }
 
-    public Prestamo(String fechasolicitud, String fechasalida, String fechadevolucion, short estado, String observacion, Ficha fkFicha, Municipio fkMunicipio, Responsable fkResponsable , String codigo) {
+    public PojoPrestamo(String fechasolicitud, String fechasalida, String fechadevolucion, short estado, String observacion, String fkFicha, String fkMunicipio, String fkResponsable , String codigo) {
         this.fechasolicitud = fechasolicitud;
         this.fechasalida = fechasalida;
         this.fechadevolucion = fechadevolucion;
@@ -79,31 +76,32 @@ public class Prestamo {
         this.observacion = descripcion;
     }
 
-    public Ficha getFk_ficha() {
+    public String getFk_ficha() {
         return fkFicha;
     }
 
-    public void setFk_ficha(Ficha fk_ficha) {
+    public void setFk_ficha(String fk_ficha) {
         this.fkFicha = fk_ficha;
     }
 
-    public Municipio getFk_municipio() {
+    public String getFk_municipio() {
         return fkMunicipio;
     }
 
-    public void setFk_municipio(Municipio fk_municipio) {
-        this.fkMunicipio = fkMunicipio;
+    public void setFk_municipio(String fk_municipio) {
+        this.fkMunicipio = fk_municipio;
     }
 
-    public Responsable getFk_responsable() {
+    public String getFk_responsable() {
         return fkResponsable;
     }
 
-    public void setFk_responsable(Responsable fkResponsable) {
+    public void setFk_responsable(String fkResponsable) {
         this.fkResponsable = fkResponsable;
     }
 
-    public Prestamo() {
+    public PojoPrestamo() {
     }
 
 }
+

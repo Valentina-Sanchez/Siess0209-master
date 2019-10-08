@@ -3,7 +3,7 @@ package co.example.prueba.consumo;
 import java.math.BigInteger;
 import java.util.Date;
 
-public class Post {
+public class Equipo {
     private int pkEquipo;
     private String nombre;
     private BigInteger serial;
@@ -16,10 +16,10 @@ public class Post {
     private Date FechaInicioOperacion;
     private Date FechaRetiro;
 
-    public Post() {
+    public Equipo() {
     }
 
-    public Post(int pkEquipo, String nombre, BigInteger serial, String modelo, int placaSena, int numeroCertificacion, String vidaUtilPrevista, Date anioFabricacion, Date fechaCompra, Date fechaInicioOperacion, Date fechaRetiro) {
+    public Equipo(int pkEquipo, String nombre, BigInteger serial, String modelo, int placaSena, int numeroCertificacion, String vidaUtilPrevista, Date anioFabricacion, Date fechaCompra, Date fechaInicioOperacion, Date fechaRetiro) {
         this.pkEquipo = pkEquipo;
         this.nombre = nombre;
         this.serial = serial;

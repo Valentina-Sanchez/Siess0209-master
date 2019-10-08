@@ -43,10 +43,10 @@ public class DetallePrestamo extends AppCompatActivity {
         fechaDevolucion.setText(Prestamos.prestamos.get(i).getFechadevolucion().toString());
         estado.setText(Prestamos.prestamos.get(i).getEstado()+"");
         obser.setText(Prestamos.prestamos.get(i).getObservacion());
-        ficha.setText(Prestamos.prestamos.get(i).getFk_ficha().getCodigo());
-        municipio.setText(Prestamos.prestamos.get(i).getFk_municipio().getNombre());
-        responsable.setText(Prestamos.prestamos.get(i).getFk_responsable().getNombres() +" " +
-                Prestamos.prestamos.get(i).getFk_responsable().getApellidos());
+        ficha.setText(Prestamos.prestamos.get(i).getFk_ficha().toString());
+        municipio.setText(Prestamos.prestamos.get(i).getFk_municipio().toString());
+        responsable.setText(Prestamos.prestamos.get(i).getFk_responsable().toString() +" " +
+                Prestamos.prestamos.get(i).getFk_responsable().toString());
 
         Bundle datos = this.getIntent().getExtras();
         String codigo= datos.getString("codigo","0");

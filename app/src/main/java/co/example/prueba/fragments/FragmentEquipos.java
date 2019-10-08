@@ -17,7 +17,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import co.example.prueba.R;
-import co.example.prueba.consumo.Post;
+import co.example.prueba.consumo.Equipo;
 import co.example.prueba.consumo.PostService;
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -56,31 +56,31 @@ public class FragmentEquipos extends Fragment {
 
         list.setAdapter(arrayAdapter);
 
-        getPosts();
+        getEquipos();
         return view;
     }
 
-    private void getPosts () {
+    private void getEquipos () {
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("http://10.75.199.103:8083/siessPro-1.0.0/")
+                .baseUrl("http://10.75.199.51:8083/siessPro-1.0.0/")
                 .addConverterFactory(GsonConverterFactory.create()).build();
 
 
         PostService postService = retrofit.create(PostService.class);
 
-        Call<List<Post>> call = postService.getPost();
+        Call<List<Equipo>> call = postService.getPost();
 
-        call.enqueue(new Callback<List<Post>>() {
+        call.enqueue(new Callback<List<Equipo>>() {
             @Override
-            public void onResponse(Call<List<Post>> call, Response<List<Post>> response) {
-                for (Post post : response.body()) {
-                    titles.add(post.getNombre());
+            public void onResponse(Call<List<Equipo>> call, Response<List<Equipo>> response) {
+                for (Equipo equipo : response.body()) {
+                    titles.add(equipo.getNombre());
                 }
                 arrayAdapter.notifyDataSetChanged();
             }
 
             @Override
-            public void onFailure(Call<List<Post>> call, Throwable t) {
+            public void onFailure(Call<List<Equipo>> call, Throwable t) {
                 Log.d("ERROR", t+" ");
             }
         });
