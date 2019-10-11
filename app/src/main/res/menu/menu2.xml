@@ -1,11 +1,10 @@
-<?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:id="@+id/menu_notificaciones"
-        android:title="Prestamos"
+    <item android:id="@+id/realizarPrestamo"
+        android:title="Realizar Prestamo"
         android:checked="false"
         android:icon="@android:drawable/ic_popup_reminder" />
-    <item android:id="@+id/menu_equipos"
+    <item android:id="@+id/misPrestamos"
         android:checked="true"
-        android:title="Equipos Ocupados"
+        android:title="Mis Prestamos"
         android:icon="@android:drawable/ic_lock_idle_charging" />
 </menu>

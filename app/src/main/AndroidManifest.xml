@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="co.example.prueba">
-    <uses-permission android:name="android.permission.INTERNET"></uses-permission>
+
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -11,11 +12,11 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".Registro"></activity>
+        <activity android:name=".Contenedor2"></activity>
+        <activity android:name=".Registro" />
         <activity android:name=".DetallePrestamo" />
         <activity android:name=".Contenedor" />
         <activity android:name=".Prestamos" />
-        <activity android:name=".Prestamo" />
         <activity android:name=".Inicio2" />
         <activity android:name=".Inicio" />
         <activity android:name=".SplashScreen">
@@ -26,7 +27,5 @@
             </intent-filter>
         </activity>
     </application>
-
-    <uses-permission android:name="android.permission.INTERNET" />
 
 </manifest>

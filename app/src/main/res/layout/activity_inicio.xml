@@ -36,7 +36,7 @@
 
 
     <EditText
-        android:id="@+id/nom"
+        android:id="@+id/edtNombreUsuario"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/ima"
@@ -47,10 +47,10 @@
         android:hint="Usuario"/>
 
     <EditText
-        android:id="@+id/pas"
+        android:id="@+id/edtPass"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/nom"
+        android:layout_below="@+id/edtNombreUsuario"
         android:hint="Contraseña"
 android:textColorHint="@android:color/black"
         android:textColor="@android:color/black"
@@ -63,7 +63,7 @@ android:textColorHint="@android:color/black"
         android:id="@+id/btnAcep"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/pas"
+        android:layout_below="@+id/edtPass"
         android:text="Aceptar"
         android:background="@drawable/redondo"
         android:textSize="21dp"
@@ -80,13 +80,4 @@ android:textColorHint="@android:color/black"
         android:textSize="15dp"
         />
 
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="registrar"
-        android:layout_below="@+id/btnAcep"
-        android:layout_marginTop="15dp"
-        android:id="@+id/btnReg"
-        android:background="@drawable/redondo"
-        android:onClick="onRegister"></Button>
 </RelativeLayout>

@@ -62,7 +62,7 @@ public class FragmentEquipos extends Fragment {
 
     private void getEquipos () {
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("http://10.75.199.51:8083/siessPro-1.0.0/")
+                .baseUrl("http://10.75.199.38:8083/siessPro-1.0.0/")
                 .addConverterFactory(GsonConverterFactory.create()).build();
 
 

@@ -78,7 +78,7 @@ public class Inicio extends AppCompatActivity {
     }
     private void getUsuarios (String nombre, String pass) {
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("http://10.75.199.51:8083/siessPro-1.0.0/")
+                .baseUrl("http://10.75.199.38:8083/siessPro-1.0.0/")
                 .addConverterFactory(GsonConverterFactory.create()).build();
 
 
@@ -90,16 +90,14 @@ public class Inicio extends AppCompatActivity {
             @Override
             public void onResponse(Call<Usuario> call, Response<Usuario> response) {
                 Usuario user = response.body();
-                    if (user.getNombreusuario()!= null){
+                    if (!user.getNombreusuario().equals("admin")){
                        Toast.makeText(Inicio.this, "Bienvenido"+user.getNombreusuario(), Toast.LENGTH_SHORT).show();
-                        Utils.user = user;
-                       Intent intent = new Intent( Inicio.this, Prestamo.class);
+                       Intent intent = new Intent( Inicio.this, Contenedor2.class);
                        startActivity(intent);
-                    }else if (user.getNombreusuario() != "admin"){
-                        Intent intent = new Intent( Inicio.this, Prestamos.class);
+                    }else if(user.getNombreusuario().equals("admin")) {
+                        Intent intent = new Intent( Inicio.this, Contenedor.class);
                         startActivity(intent);
-                }else {
-                        Toast.makeText(Inicio.this, "Verifique sus datos", Toast.LENGTH_SHORT).show();
+                        //Toast.makeText(Inicio.this, "Verifique sus datos", Toast.LENGTH_SHORT).show();
                     }
 
             }
